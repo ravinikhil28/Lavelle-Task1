@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//LAVELLE-TASK1 V1.0 " >
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
 <title>Chat - Customer Module</title>
 <link type="text/css" rel="stylesheet" href="style.css" />
@@ -55,8 +55,16 @@ else{
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
 <script type="text/javascript">
 // jQuery Document
+
 $(document).ready(function(){
+	//If user wants to end session
+	$("#exit").click(function(){
+		var exit = confirm("Are you sure you want to end the session?");
+		if(exit==true){window.location = 'index.php?logout=true';}		
+	});
 });
+
+
 </script>
 <?php
 }
