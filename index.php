@@ -4,7 +4,7 @@
 <title>Chat - Customer Module</title>
 <link type="text/css" rel="stylesheet" href="style.css" />
 </head>
- 
+ <body>
 <div id="wrapper">
     <div id="menu">
         <p class="welcome">Welcome, <b></b></p>
@@ -19,6 +19,32 @@
         <input name="submitmsg" type="submit"  id="submitmsg" value="Send" />
     </form>
 </div>
+<?php
+session_start();
+ 
+function loginForm(){
+    echo'
+    <div id="loginform">
+    <form action="index.php" method="post">
+        <p>Please enter your name to continue:</p>
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" />
+        <input type="submit" name="enter" id="enter" value="Enter" />
+    </form>
+    </div>
+    ';
+}
+ 
+if(isset($_POST['enter'])){
+    if($_POST['name'] != ""){
+        $_SESSION['name'] = stripslashes(htmlspecialchars($_POST['name']));
+    }
+    else{
+        echo '<span class="error">Please type in a name</span>';
+    }
+}
+?>
+
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
 <script type="text/javascript">
 // jQuery Document
