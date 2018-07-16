@@ -6,7 +6,7 @@
 </head>
  <body>
  
- <?php
+ <php?
 session_start();
  
 function loginForm(){
@@ -33,7 +33,7 @@ if(isset($_POST['enter'])){
 ?>
 
 
-<?php
+<php?
 if(!isset($_SESSION['name'])){
     loginForm();
 }
@@ -41,11 +41,11 @@ else{
 ?>
 <div id="wrapper">
     <div id="menu">
-        <p class="welcome">Welcome, <b><?php echo $_SESSION['name']; ?></b></p>
+        <p class="welcome">Welcome, <b><php? echo $_SESSION['name']; ?></b></p>
         <p class="logout"><a id="exit" href="#">Exit Chat</a></p>
         <div style="clear:both"></div>
     </div>    
-    <div id="chatbox"><?php
+    <div id="chatbox"><php?
 	if(file_exists("log.html") && filesize("log.html") > 0){
     $handle = fopen("log.html", "r");
     $contents = fread($handle, filesize("log.html"));
@@ -108,7 +108,7 @@ if(isset($_GET['logout'])){
 	}
 	setInterval (loadLog, 2500);
 </script>
-<?php
+<php?
 }
 ?>
 
