@@ -106,6 +106,7 @@ if(isset($_GET['logout'])){
 		  	},
 		});
 	}
+	setInterval (loadLog, 2500);
 </script>
 <?php
 }
